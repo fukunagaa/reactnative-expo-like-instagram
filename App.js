@@ -1,10 +1,18 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  SafeAreaView,
+  ScrollView,
+  Platform,
+} from "react-native";
 import articles from "./dummies/articles.json";
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 25,
+    paddingTop: Platform.OS === "android" ? 25 : 0,
     flex: 1,
   },
   userContainer: {
@@ -45,8 +53,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   square: {
-    width: 120,
-    height: 120,
+    width: 130,
+    height: 130,
   },
   image: {
     width: "100%",
@@ -69,22 +77,24 @@ export default function App() {
     listItem.push(<View style={styles.square} key="empty2"></View>);
   }
   return (
-    <View style={styles.container}>
-      <View style={styles.userContainer}>
-        <View style={styles.userIconContainer}>
-          <Image
-            style={styles.userIcon}
-            source={{ uri: "https://picsum.photos/id/237/200/300" }}
-          />
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        <View style={styles.userContainer}>
+          <View style={styles.userIconContainer}>
+            <Image
+              style={styles.userIcon}
+              source={{ uri: "https://picsum.photos/id/237/200/300" }}
+            />
+          </View>
+          <View style={styles.userInfoContainer}>
+            <Text style={styles.userText}>ユーザの名前</Text>
+            <Text style={styles.userSubText} numberOfLines={3}>
+              ユーザの情報を記載する.....文字数制限あり......30文字表示までとする.................................................................................................................................................................................1
+            </Text>
+          </View>
         </View>
-        <View style={styles.userInfoContainer}>
-          <Text style={styles.userText}>ユーザの名前</Text>
-          <Text style={styles.userSubText} numberOfLines={3}>
-            ユーザの情報を記載する.....文字数制限あり......30文字表示までとする...........................................................................................................................................................
-          </Text>
-        </View>
-      </View>
-      <View style={styles.listContainer}>{listItem}</View>
-    </View>
+        <View style={styles.listContainer}>{listItem}</View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
