@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, ScrollView, Platform } from "react-native";
+import { StyleSheet, ScrollView, View } from "react-native";
 import ListItem from "../components/ListItem";
 import UserInfo from "../components/UserInfo";
 
@@ -11,12 +11,12 @@ const styles = StyleSheet.create({
 
 const UserScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <ScrollView>
         <UserInfo />
         <ListItem />
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 
