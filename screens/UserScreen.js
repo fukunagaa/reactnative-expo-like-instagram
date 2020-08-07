@@ -5,7 +5,6 @@ import UserInfo from "../components/UserInfo";
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === "android" ? 25 : 0,
     flex: 1,
   },
 });
