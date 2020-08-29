@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
+import ImagePicker from "../components/ImagePicker";
 
 const styles = StyleSheet.create({
   container: {
@@ -8,11 +9,7 @@ const styles = StyleSheet.create({
 });
 
 const CameraScreen = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Camera screen</Text>
-    </View>
-  );
+  return <ImagePicker />;
 };
 
 export default CameraScreen;
