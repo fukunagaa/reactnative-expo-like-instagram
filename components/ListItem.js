@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
   articlesContainer: {
     flex: 1,
     flexDirection: "row",
-    backgroundColor: "red",
   },
   square: {
     width: "100%",
