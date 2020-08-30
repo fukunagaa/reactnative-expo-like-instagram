@@ -11,11 +11,18 @@ const styles = StyleSheet.create({
   articlesContainer: {
     flex: 1,
     flexDirection: "row",
+    marginBottom: 2,
   },
   square: {
     width: "100%",
     flex: 1,
     aspectRatio: 1,
+  },
+  marginSquare: {
+    width: "100%",
+    flex: 1,
+    aspectRatio: 1,
+    marginRight: 2,
   },
   itemImage: {
     width: "100%",
@@ -47,7 +54,7 @@ const ListItem = () => {
   });
   const listItem = listArticles.map((articles, index) => {
     const el1 = (
-      <View style={styles.square} key={articles.idx1}>
+      <View style={styles.marginSquare} key={articles.idx1}>
         <Image
           style={styles.itemImage}
           source={{ uri: articles.article1.urlToImage }}
@@ -56,9 +63,9 @@ const ListItem = () => {
     );
     const el2 =
       articles.article2 == null ? (
-        <View style={styles.square} key="empty2"></View>
+        <View style={styles.marginSquare} key="empty2"></View>
       ) : (
-        <View style={styles.square} key={articles.idx2}>
+        <View style={styles.marginSquare} key={articles.idx2}>
           <Image
             style={styles.itemImage}
             source={{ uri: articles.article2.urlToImage }}
@@ -76,7 +83,6 @@ const ListItem = () => {
           />
         </View>
       );
-    console.log(articles.article3);
     return (
       <View key={index} style={styles.articlesContainer}>
         {el1}
