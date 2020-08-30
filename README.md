@@ -12,3 +12,9 @@ $ npm install
 ```
 $ npm start
 ```
+
+- 公開
+
+```
+$ expo publish --release-channel=instalikeproduction
+```
