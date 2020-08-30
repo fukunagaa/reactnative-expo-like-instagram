@@ -14,8 +14,7 @@ const styles = StyleSheet.create({
   icon: {
     width: 70,
     height: 70,
-    borderRadius: 30,
-    // padding: 10,
+    borderRadius: 50,
   },
   infoContainer: {
     flex: 1,
